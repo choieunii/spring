@@ -1,5 +1,6 @@
 package com.hello.book.springboot.domain.posts;
 
+import com.hello.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 //해당 클래스의 빌더 패턴 클래스를 생성, 생성자에 포함된 필드만 빌더에 포함
 import lombok.Getter;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor // 롬복의 어노테이션
 @Entity // JPA의 어노테이션
 //테이블과 링크될 클래스 임을 나타낸다. 절대 Setter 메소드를 만들지 않는다.
-public class Posts {
+public class Posts extends BaseTimeEntity {
     @Id //PK 필드
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     //PK 생성 규칙을 나타낸다. Gene... -> 옵션을 스프링부트 2.0에서 추가해야만 auto_increment 가 된다.
