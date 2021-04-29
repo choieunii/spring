@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 //기본 생성자 자동 추가
 import javax.persistence.*;
+
 @Getter
 @NoArgsConstructor // 롬복의 어노테이션
 @Entity // JPA의 어노테이션
@@ -30,15 +31,15 @@ public class Posts extends BaseTimeEntity {
     private String author;
 
     @Builder
-    public Posts(String title, String content, String author){
+    public Posts(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
     }
 
 
-    public void update(String title, String content){
+    public void update(String title, String content) {
         this.title = title;
-        this.content=content;
+        this.content = content;
     }
 }
